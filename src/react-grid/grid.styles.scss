@@ -1,0 +1,56 @@
+$headerHeight: 30px;
+$border: 1px solid lightgrey;
+$padding: 3px;
+
+%box-sizing {
+    box-sizing: border-box;
+}
+
+.react-grid {
+    @extend %box-sizing;
+
+    position: relative;
+    border: $border;
+
+    .react-grid-header {
+        @extend %box-sizing;
+        display: flex;
+        height: $headerHeight;
+        width: calc(100% - var(--scroll-bar-size));
+        border-right: $border;
+        border-bottom: $border;
+        overflow: hidden;
+
+        .react-grid-header-cell {
+            @extend %box-sizing;
+            height: $headerHeight;
+            padding: $padding;
+            border-right: $border;
+            flex-shrink: 0;
+
+            &:last-child {
+                border-right: unset;
+            }
+        }
+    }
+
+    .react-grid-content {
+        position: relative;
+        overflow: scroll;
+        height: calc(100% - #{$headerHeight});
+
+        .react-grid-row {
+            @extend %box-sizing;
+            display: flex;
+            height: 30px;
+
+            .react-grid-cell {
+                @extend %box-sizing;
+                padding: $padding;
+                border-bottom: $border;
+                border-right: $border;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
