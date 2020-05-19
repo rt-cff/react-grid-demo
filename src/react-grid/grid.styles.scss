@@ -53,4 +53,29 @@ $padding: 3px;
             }
         }
     }
+
+    .react-grid-mask-container {
+        position: absolute;
+        height: 30px;
+        box-sizing: border-box;
+        z-index: 1;
+        // opacity: 0.9;
+        border: none;
+
+        .react-grid-mask {
+            border: 2px solid #1d94f3c7;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input {
+            @extend %box-sizing;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #1d94f3c7;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
 }

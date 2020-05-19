@@ -14,7 +14,7 @@ const useVirtualization = (data) => {
         setStart(start)
         setEnd(end)
     }
-    console.log(start, end)
+
     return [
         data.slice(start, end),  
         start, 

@@ -9,8 +9,8 @@ const formatData = (data, type) => {
     }
 }
 
-const Cell = ({x, y, data, width, setMask}) => {
-    const handleClick = useCallback(() => setMask({x, y}), [setMask, x, y])
+const Cell = ({columnIndex, rowIndex, data, width, setMask}) => {
+    const handleClick = useCallback(() => setMask(columnIndex, rowIndex), [setMask, columnIndex, rowIndex])
 
     return (
         <div 

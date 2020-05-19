@@ -16,7 +16,7 @@ const cols = [
   {id: 'amount', name: 'Amount', type: 'number', width: 300},
 ]
 
-const _data = _range(1000).map(n => ({
+const _data = _range(10000).map(n => ({
   type: '3321', amount: Math.random() * 100, quantity: n
 })) 
 
@@ -24,7 +24,7 @@ function App() {
   const [state, setState] = useState(0)
   const [data, setData] = useState(_data)
 
-  const onCommit = ({rowId, row, id, value}) => {
+  const onChange = ({rowId, row, id, value}) => {
     console.log(rowId, row, id, value)
     data[rowId] = {
       ...data[rowId], 
@@ -41,6 +41,8 @@ function App() {
           cols = {cols}
           data = {data}
           // commit = {onCommit}
+
+          onChange = {onChange}
 
           width = {700}
           height = {400}

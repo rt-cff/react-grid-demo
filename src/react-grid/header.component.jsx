@@ -11,4 +11,4 @@ const Header = ({cols}, ref) => {
     )
 }
 
-export default forwardRef(Header)
+export default memo(forwardRef(Header))
